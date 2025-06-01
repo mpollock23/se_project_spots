@@ -1,0 +1,20 @@
+.card {
+  /* width: 413px; */
+}
+
+.card__image {
+  width: 413px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  padding-bottom: 12px;
+}
+
+.card__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__title {
+  margin: 0;
+}
