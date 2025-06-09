@@ -1,5 +1,9 @@
-.footer__image {
-  display: block;
+.footer__text {
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+  color: #212121B2;
   padding-bottom: 60px;
-  margin: 0 auto;
+  margin: 0;
 }

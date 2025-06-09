@@ -1,21 +1,24 @@
-# Project 3: Spots
+# Spots
 
-### Overview  
+This is the third project for the Software Engineering Bootcamp at TripleTen. 
 
-* Intro  
-* Figma  
-* Images  
+## Overview  
+
+This project is a picture-sharing social media app, which will eventually allow people to share pictures and to view and like other people's pictures. It has a responsive design, adapting to screen sizes from 320px and larger. It was created using a design from Figma, thereby simulating a real-world project.
+
+## Project Features
+
+This project includes the following features:
+
+- Semantic HTML5
+- CSS
+- Flexbox
+- Grid Layout
+- Flat BEM file structure
+- Responsive Design
+- Git and GitHub
   
-**Intro**
-  
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
-  
-**Figma**  
-  
-* [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
-  
-**Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+## Links  
+* Click [here](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1) to view the Figma design.
+
+* Click [here](https://mpollock23.github.io/se_project_spots/) to view the project on my GitHub page.

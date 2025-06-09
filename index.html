@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="html" lang="en">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,19 +8,15 @@
     <meta name="keywords" content="photo, social media" />
     <link rel="stylesheet" href="pages/index.css" />
     <link rel="icon" href="favicon.ico" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
     <title>Spots</title>
   </head>
-  <body class="body">
+  <body>
     <div class="page">
-      <menu class="menu">
+      <div class="menu">
         <a href="#">
           <img src="./images/logo.svg" alt="logo" class="menu__logo" />
         </a>
-      </menu>
+      </div>
       <div class="main-content">
         <header class="header">
           <div class="profile">
@@ -46,20 +42,15 @@
               </div>
             </div>
           </div>
-          <div class="header__new-post">
-            <a href="#">
-              <button class="header__new-post-button" type="submit">
-                <img
-                  src="./images/add-sign.svg"
-                  alt="new post"
-                  class="header__new-post-img"
-                />
-                <span class="header__new-post-text">New Post</span>
-              </button>
-            </a>
-          </div>
+          <a href="#" class="header__new-post-button">
+            <img
+              src="./images/add-sign.svg"
+              alt="new post"
+              class="header__new-post-img"
+            />
+            <p class="header__new-post-text">New Post</p>
+          </a>
         </header>
-
         <main class="content">
           <div class="cards">
             <div class="card">
@@ -144,13 +135,8 @@
             </div>
           </div>
         </main>
-
         <footer class="footer">
-          <img
-            src="./images/Footer.png"
-            alt="footer image"
-            class="footer__image"
-          />
+            <p class="footer__text">2023 © Spots</p>
         </footer>
       </div>
     </div>
