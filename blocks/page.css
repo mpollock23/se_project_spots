@@ -2,4 +2,5 @@
   background-color: #fcf5e5;
   box-sizing: border-box;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
+  min-height: 100vh;
 }
