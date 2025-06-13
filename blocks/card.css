@@ -24,11 +24,17 @@
 }
 
 .card__like {
+  background-image: url(../images/like-heart.svg);
+  width: 23px;
+  height: 20px;
+  border: none;
+  padding: 0;
   opacity: 0.4;
 }
 
 .card__like:hover {
   opacity: 1;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 320px) and (max-width: 630px) {
@@ -36,7 +42,6 @@
     width: 288px;
     margin: 0 auto;
   }
-
 
   .card__image {
     width: 288px;
