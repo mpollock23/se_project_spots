@@ -22,3 +22,5 @@ This project includes the following features:
 * Click [here](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1) to view the Figma design.
 
 * Click [here](https://mpollock23.github.io/se_project_spots/) to view the project on my GitHub page.
+
+* Click [here](https://drive.google.com/file/d/1D3L_y9u6hYbgE6kjZdQ-tFoNWMGDyBuU/view?usp=sharing) to view a video presentation describing this project.

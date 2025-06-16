@@ -1,28 +1,23 @@
 .profile {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 20px;
   padding-top: 34px;
   padding-bottom: 20px;
   border-bottom: 1px solid #21212166;
   margin-bottom: 20px;
 }
 
+.profile__avatar {
+  width: 190;
+  height: 190px;
+  border-radius: 8px;
+}
+
 .profile__content {
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.profile__details {
-  display: flex;
   flex-direction: column;
-  justify-content: space-between;
-}
-
-.profile__info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 12px;
 }
 
@@ -51,12 +46,10 @@
   -webkit-box-orient: vertical;
 }
 
-
-
 .profile__edit-button {
   border: none;
-  /* height: 16px; */
   padding: 0;
+  margin-top: auto;
   margin-right: auto;
   font-weight: 500;
   font-size: 16px;
@@ -80,14 +73,13 @@
   vertical-align: bottom;
 }
 
-
 .profile__edit-button:hover {
   opacity: 1;
   cursor: pointer;
 }
 
-
 .profile__new-post-button {
+  margin-left: auto;
   align-self: flex-end;
   content: "";
   background-color: #212121;
@@ -97,6 +89,7 @@
   padding: 18px 24px 18px 32px;
   text-decoration: none;
   white-space: nowrap;
+  border: none;
 }
 
 .profile__new-post-button::before {
@@ -115,27 +108,17 @@
   cursor: pointer;
 }
 
-.profile__new-post-text {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1;
-  color: #fcf5e5;
-  margin: 0;
-  white-space: nowrap;
-}
-
 @media screen and (min-width: 320px) and (max-width: 630px) {
   .profile {
     padding: 0;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 0;
   } 
 
   .profile__content {
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
+    gap: 6px;
   }  
 
   .profile__avatar {
@@ -145,19 +128,14 @@
     padding-bottom: 12px;
   }
 
-  .profile__info {
-    gap: 6px;
-  }
-
   .profile__name {
     font-size: 20px;
   }
 
-  .profile__edit {
-    padding-top: 32px;
-    align-self: center;
+  .profile__edit-button {
+    padding-top: 24px;
+    margin: auto auto 0;
   }
-
 
   .profile__new-post-button {
     align-self: center;
