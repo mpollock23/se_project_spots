@@ -21,6 +21,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  max-width: 350px;
 }
 
 .card__like {
@@ -51,5 +52,6 @@
   .card__title {
     font-size: 16px;
     line-height: 1;
+    max-width: 250px;
   }
 }
