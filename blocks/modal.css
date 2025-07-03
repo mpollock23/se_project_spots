@@ -11,6 +11,10 @@
   align-items: center;
 }
 
+.modal_is-open {
+  visibility: visible;
+}
+
 .modal__container {
   padding: 32px 50px;
   margin: 0 16px;
