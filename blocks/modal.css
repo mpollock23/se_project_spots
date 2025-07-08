@@ -1,6 +1,6 @@
 .modal {
   visibility: hidden;
-  background-color: #00000080;
+  background-color: #00000000;
   position: fixed;
   top: 0;
   right: 0;
@@ -9,10 +9,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: visibility 0.5s linear 0s, background-color 0.5s linear;
 }
 
 .modal_is-open {
   visibility: visible;
+  background-color: #00000080;
 }
 
 .modal__container {
@@ -24,6 +26,12 @@
   width: 100%;
   max-width: 730px;
   box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 0.5s linear;
+}
+
+.modal_is-open .modal__container {
+  opacity: 1;
 }
 
 .modal__close-btn {
