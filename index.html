@@ -55,9 +55,9 @@
           <h2 class="modal__title">Edit Profile</h2>
           <form class="form">
             <label for="name" class="form__label">Name</label>
-            <input type="text" class="form__input" id="name" name="name" placeholder="Type your name" />
+            <input type="text" class="form__input" id="name" name="name" placeholder="Type your name" required/>
             <label for="description" class="form__label">Description</label>
-            <input type="text" class="form__input" id="description" name="description" placeholder="Describe yourself" />
+            <input type="text" class="form__input" id="description" name="description" placeholder="Describe yourself" required/>
             <button type='submit' class="form__save-btn">Save</button>
           </form>
         </div>
@@ -71,9 +71,9 @@
           <h2 class="modal__title">New Post</h2>
           <form class="form">
             <label for="img-link" class="form__label">Image link</label>
-            <input type="url" class="form__input" id="img-link" name="img-link" placeholder="Paste a link to the picture" />
+            <input type="url" class="form__input" id="img-link" name="img-link" placeholder="Paste a link to the picture" required/>
             <label for="caption" class="form__label">Caption</label>
-            <input type="text" class="form__input" id="caption" name="caption" placeholder="Type your caption" />
+            <input type="text" class="form__input" id="caption" name="caption" placeholder="Type your caption" required/>
             <button type="submit" class="form__save-btn">Save</button>
           </form>
         </div>
@@ -84,8 +84,8 @@
           <button class="modal__close-btn modal__close-btn_type_image">
             <img src="./images/close-x-white.svg" alt="close modal" class="modal__close-icon" />
           </button>
-          <div class="modal__content_type_image">
-            <img class="modal__image"/>
+          <div class="modal__content modal__content_type_image">
+            <img class="modal__image" src="" alt=""/>
             <h2 class="modal__title modal__title_type_image"></h2>
           </div>
         </div>  

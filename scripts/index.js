@@ -32,11 +32,16 @@ function getCardElement(data) {
     previewTitle.textContent = data.name;
     openModal(previewImageModal);
   });
-
-
   return cardElement;
 }
 
+// Preview Image Modal
+const previewImageModal = document.querySelector("#preview");
+const previewCloseBtn = previewImageModal.querySelector(".modal__close-btn_type_image");
+const previewImage = previewImageModal.querySelector(".modal__image");
+const previewTitle = previewImageModal.querySelector(".modal__title_type_image");
+
+// Initial Cards Rendering
 initialCards.forEach(function (card) {
   const cardElement = getCardElement(card);
   const cardsContainer = document.querySelector(".cards");
@@ -115,11 +120,6 @@ function handleNewPostSubmit(evt) {
 
 newPostForm.addEventListener("submit", handleNewPostSubmit);
 
-// Preview Image Modal
-const previewImageModal = document.querySelector("#preview");
-const previewCloseBtn = previewImageModal.querySelector(".modal__close-btn_type_image");
-const previewImage = previewImageModal.querySelector(".modal__image");
-const previewTitle = previewImageModal.querySelector(".modal__title_type_image");
 previewCloseBtn.addEventListener("click", function () {
   closeModal(previewImageModal);
 });

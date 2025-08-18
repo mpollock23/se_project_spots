@@ -12,5 +12,6 @@
   .cards {
     gap: 20px;
     padding-bottom: 20px;
+    grid-template-columns: repeat(auto-fit, 288px);
   }
 }
