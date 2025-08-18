@@ -17,6 +17,7 @@
           <img src="./images/logo.svg" alt="logo" class="header__logo" />
         </a>
       </header>
+      
       <main class="content">
         <section class="profile">
           <img src="./images/avatar.jpg" alt="avatar" class="profile__avatar">
@@ -27,75 +28,21 @@
           </div>
           <button class="profile__new-post-button" type="button">New Post</button>
         </section>
-        <section class="cards">          
-          <article class="card">
-            <img
-              src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
-              alt="pic of winter scene"
-              class="card__image"
-            />
-            <div class="card__info">
-              <h2 class="card__title">Val Thorens</h2>
-              <button class="card__like" type="button"></button>
-            </div>
-          </article>
-          <article class="card">
-            <img
-              src="./images/2-photo-by-ceiline-from-pexels.jpg"
-              alt="pic of restaurant"
-              class="card__image"
-            />
-            <div class="card__info">
-              <h2 class="card__title">Restaurant terrace</h2>
-              <button class="card__like" type="button"></button>
-            </div>
-          </article>
-          <article class="card">
-            <img
-              src="./images/3-photo-by-tubanur-dogan-from-pexels.jpg"
-              alt="pic of outdoor cafe"
-              class="card__image"
-            />
-            <div class="card__info">
-              <h2 class="card__title">An outdoor cafe</h2>
-              <button class="card__like" type="button"></button>
-            </div>
-          </article>
-          <article class="card">
-            <img
-              src="./images/4-photo-by-maurice-laschet-from-pexels.jpg"
-              alt="pic of bridge"
-              class="card__image"
-            />
-            <div class="card__info">
-              <h2 class="card__title">A very long bridge, over the forest...</h2>
-              <button class="card__like" type="button"></button>
-            </div>
-          </article>
-          <article class="card">
-            <img
-              src="./images/5-photo-by-van-anh-nguyen-from-pexels.jpg"
-              alt="pic of tunnel"
-              class="card__image"
-            />
-            <div class="card__info">
-              <h2 class="card__title">Tunnel with morning light</h2>
-              <button class="card__like" type="button"></button>
-            </div>
-          </article>
-          <article class="card">
-            <img
-              src="./images/6-photo-by-moritz-feldmann-from-pexels.jpg"
-              alt="pic of house on mountain"
-              class="card__image"
-            />
-            <div class="card__info">
-              <h2 class="card__title">Mountain house</h2>
-              <button class="card__like" type="button"></button>
-            </div>
-          </article>
+        
+        <section class="cards">
+          <template id="card-template">
+            <article class="card">
+              <img class="card__image"/>
+              <div class="card__info">
+                <h2 class="card__title"></h2>
+                <button class="card__like-button card__like-button_active" type="button"></button>
+              </div>
+              <button class="card__delete-button" type="button"></button>
+            </article>
+          </template>
         </section>
       </main>
+
       <footer class="footer">
         <p class="footer__text">2025 © Spots</p>
       </footer>
@@ -130,6 +77,18 @@
             <button type="submit" class="form__save-btn">Save</button>
           </form>
         </div>
+      </div>
+
+      <div class="modal " id="preview">
+        <div class="modal__container modal__container_type_image">
+          <button class="modal__close-btn modal__close-btn_type_image">
+            <img src="./images/close-x-white.svg" alt="close modal" class="modal__close-icon" />
+          </button>
+          <div class="modal__content_type_image">
+            <img class="modal__image"/>
+            <h2 class="modal__title modal__title_type_image"></h2>
+          </div>
+        </div>  
       </div>
 
     </div>
