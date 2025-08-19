@@ -8,6 +8,8 @@ const initialCards = [
   {name: 'Golden Gate Bridge', link: 'https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg'}
 ]
 
+const cardsContainer = document.querySelector(".cards");
+
 // Card Creation
 const templateCard = document.querySelector("#card-template").content;
 function getCardElement(data) {
@@ -44,7 +46,6 @@ const previewTitle = previewImageModal.querySelector(".modal__title_type_image")
 // Initial Cards Rendering
 initialCards.forEach(function (card) {
   const cardElement = getCardElement(card);
-  const cardsContainer = document.querySelector(".cards");
   cardsContainer.append(cardElement);
 });
 
@@ -73,8 +74,12 @@ editProfileButton.addEventListener("click", function () {
   editProfileDescriptionInput.value = profileDescription.textContent;
 });
 
-editCloseBtn.addEventListener("click", function () {
-  closeModal(editProfileModal);
+const modalCloseBtns = document.querySelectorAll(".modal__close-btn");
+modalCloseBtns.forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    const modal = btn.closest(".modal");
+    closeModal(modal);
+  });
 });
 
 function handleEditProfileSubmit(evt) {
@@ -98,28 +103,18 @@ const newPostCaptionInput = newPostForm.querySelector("#caption");
 
 newPostButton.addEventListener("click", function () {
   openModal(newPostModal);
-  newPostImgLinkInput.value = "";
-  newPostCaptionInput.value = "";
-});
-
-newPostCloseBtn.addEventListener("click", function () {
-  closeModal(newPostModal);
 });
 
 function handleNewPostSubmit(evt) {
   evt.preventDefault();
-  const cardsContainer = document.querySelector(".cards");
   const newCardData = {
     name: newPostCaptionInput.value,
     link: newPostImgLinkInput.value
   };
   const newCardElement = getCardElement(newCardData);
   cardsContainer.prepend(newCardElement);
+  evt.target.reset();
   closeModal(newPostModal);
 }
 
 newPostForm.addEventListener("submit", handleNewPostSubmit);
-
-previewCloseBtn.addEventListener("click", function () {
-  closeModal(previewImageModal);
-});
