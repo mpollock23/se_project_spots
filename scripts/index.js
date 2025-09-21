@@ -62,16 +62,17 @@ const profileDescription = document.querySelector(".profile__description");
 
 function openModal(modal) {
   modal.classList.add("modal_is-open");
+  closeModalWithOverlayAndEscape(modal);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-open");
+  removeListeners(modal);
 }
 
 editProfileButton.addEventListener("click", function () {
   openModal(editProfileModal);
-  editProfileNameInput.value = profileName.textContent;
-  editProfileDescriptionInput.value = profileDescription.textContent;
+  resetValidation(editProfileForm, Array.from(editProfileForm.querySelectorAll(settings.inputSelector)), settings);
 });
 
 const modalCloseBtns = document.querySelectorAll(".modal__close-btn");
@@ -100,9 +101,11 @@ const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 const newPostForm = newPostModal.querySelector(".form");
 const newPostImgLinkInput = newPostForm.querySelector("#img-link");
 const newPostCaptionInput = newPostForm.querySelector("#caption");
+const newPostSubmitBtn = newPostForm.querySelector(".form__save-btn");
 
 newPostButton.addEventListener("click", function () {
   openModal(newPostModal);
+  resetValidation(newPostForm, Array.from(newPostForm.querySelectorAll(settings.inputSelector)), settings);
 });
 
 function handleNewPostSubmit(evt) {
@@ -114,7 +117,34 @@ function handleNewPostSubmit(evt) {
   const newCardElement = getCardElement(newCardData);
   cardsContainer.prepend(newCardElement);
   evt.target.reset();
+  disableButton(newPostSubmitBtn, settings);
   closeModal(newPostModal);
 }
 
 newPostForm.addEventListener("submit", handleNewPostSubmit);
+
+// Closing Modals by Clicking on Overlay or Pressing Escape
+const clickCloseModal = (evt) => {
+  if (evt.target.classList.contains("modal")) {
+    closeModal(evt.target);
+  }
+};
+
+const escCloseModal = (evt) => {
+  if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".modal.modal_is-open");
+    if (openedModal) {
+      closeModal(openedModal);
+    }
+  }
+};
+
+const closeModalWithOverlayAndEscape = (openedModal) => {
+  openedModal.addEventListener("click", clickCloseModal);
+  document.addEventListener("keydown", escCloseModal);
+};
+
+const removeListeners = (openedModal) => {
+  openedModal.removeEventListener("click", clickCloseModal);
+  document.removeEventListener("keydown", escCloseModal);
+};
