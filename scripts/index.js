@@ -62,6 +62,8 @@ const profileDescription = document.querySelector(".profile__description");
 
 function openModal(modal) {
   modal.classList.add("modal_is-open");
+  editProfileNameInput.value = profileName.textContent;
+  editProfileDescriptionInput.value = profileDescription.textContent;
   closeModalWithOverlayAndEscape(modal);
 }
 

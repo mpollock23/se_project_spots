@@ -83,6 +83,3 @@ const enableValidation = (config) => {
 };
 
 enableValidation(settings);
-
-editProfileNameInput.value = profileName.textContent;
-editProfileDescriptionInput.value = profileDescription.textContent;
