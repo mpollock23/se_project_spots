@@ -17,25 +17,32 @@
           <img src="./images/logo.svg" alt="logo" class="header__logo" />
         </a>
       </header>
-      
+
       <main class="content">
         <section class="profile">
-          <img src="./images/avatar.jpg" alt="avatar" class="profile__avatar">
+          <img src="./images/avatar.jpg" alt="avatar" class="profile__avatar" />
           <div class="profile__content">
             <h1 class="profile__name">Bessie Coleman</h1>
             <p class="profile__description">Civil Aviator</p>
-            <button class="profile__edit-button" type="button">Edit Profile</button>            
+            <button class="profile__edit-button" type="button">
+              Edit Profile
+            </button>
           </div>
-          <button class="profile__new-post-button" type="button">New Post</button>
+          <button class="profile__new-post-button" type="button">
+            New Post
+          </button>
         </section>
-        
+
         <section class="cards">
           <template id="card-template">
             <article class="card">
-              <img class="card__image" src="#" alt="card picture"/>
+              <img class="card__image" src="#" alt="card picture" />
               <div class="card__info">
                 <h2 class="card__title"></h2>
-                <button class="card__like-button card__like-button_active" type="button"></button>
+                <button
+                  class="card__like-button card__like-button_active"
+                  type="button"
+                ></button>
               </div>
               <button class="card__delete-button" type="button"></button>
             </article>
@@ -50,40 +57,82 @@
       <div class="modal" id="edit-profile-modal">
         <div class="modal__container">
           <button class="modal__close-btn">
-            <img src="./images/close-x.svg" alt="close modal" class="modal__close-icon" />
+            <img
+              src="./images/close-x.svg"
+              alt="close modal"
+              class="modal__close-icon"
+            />
           </button>
           <h2 class="modal__title">Edit Profile</h2>
           <form class="form" novalidate>
             <label class="form__label">
               Name
-              <input type="text" class="form__input" id="name" name="name" placeholder="Type your name" required minlength="2" maxlength="40"/>
+              <input
+                type="text"
+                class="form__input"
+                id="name"
+                name="name"
+                placeholder="Type your name"
+                required
+                minlength="2"
+                maxlength="40"
+              />
               <span class="form__input-error name-error"></span>
             </label>
             <label class="form__label">
               Description
-              <input type="text" class="form__input" id="description" name="description" placeholder="Describe yourself" required minlength="2" maxlength="200"/>
+              <input
+                type="text"
+                class="form__input"
+                id="description"
+                name="description"
+                placeholder="Describe yourself"
+                required
+                minlength="2"
+                maxlength="200"
+              />
               <span class="form__input-error description-error"></span>
             </label>
-            <button type='submit' class="form__save-btn">Save</button>
+            <button type="submit" class="form__save-btn">Save</button>
           </form>
         </div>
       </div>
-      
+
       <div class="modal" id="new-post-modal">
         <div class="modal__container">
           <button class="modal__close-btn">
-            <img src="./images/close-x.svg" alt="close modal" class="modal__close-icon" />
+            <img
+              src="./images/close-x.svg"
+              alt="close modal"
+              class="modal__close-icon"
+            />
           </button>
           <h2 class="modal__title">New Post</h2>
           <form class="form" novalidate>
             <label for="img-link" class="form__label">
               Image link
-              <input type="url" class="form__input" id="img-link" name="img-link" placeholder="Paste a link to the picture" required />
+              <input
+                type="url"
+                class="form__input"
+                id="img-link"
+                name="img-link"
+                placeholder="Paste a link to the picture"
+                required
+              />
               <span class="form__input-error img-link-error"></span>
             </label>
             <label for="caption" class="form__label">
               Caption
-              <input type="text" class="form__input" id="caption" name="caption" placeholder="Type your caption" required minlength="2" maxlength="30"/>
+              <input
+                type="text"
+                class="form__input"
+                id="caption"
+                name="caption"
+                placeholder="Type your caption"
+                required
+                minlength="2"
+                maxlength="30"
+              />
               <span class="form__input-error caption-error"></span>
             </label>
             <button type="submit" class="form__save-btn" disabled>Save</button>
@@ -91,18 +140,21 @@
         </div>
       </div>
 
-      <div class="modal " id="preview">
+      <div class="modal" id="preview">
         <div class="modal__container modal__container_type_image">
           <button class="modal__close-btn modal__close-btn_type_image">
-            <img src="./images/close-x-white.svg" alt="close modal" class="modal__close-icon" />
+            <img
+              src="./images/close-x-white.svg"
+              alt="close modal"
+              class="modal__close-icon"
+            />
           </button>
           <div class="modal__content modal__content_type_image">
-            <img class="modal__image" src="#" alt="preview image"/>
+            <img class="modal__image" src="#" alt="preview image" />
             <h2 class="modal__title modal__title_type_image"></h2>
           </div>
-        </div>  
+        </div>
       </div>
-
     </div>
     <script src="./scripts/index.js"></script>
     <script src="./scripts/validation.js"></script>

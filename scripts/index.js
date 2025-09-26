@@ -107,7 +107,6 @@ const newPostSubmitBtn = newPostForm.querySelector(".form__save-btn");
 
 newPostButton.addEventListener("click", function () {
   openModal(newPostModal);
-  resetValidation(newPostForm, Array.from(newPostForm.querySelectorAll(settings.inputSelector)), settings);
 });
 
 function handleNewPostSubmit(evt) {
