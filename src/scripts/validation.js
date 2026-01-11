@@ -1,4 +1,4 @@
-const settings = {
+export const settings = {
   formSelector: ".form",
   inputSelector: ".form__input",
   submitButtonSelector: ".form__save-btn",
@@ -10,7 +10,7 @@ const settings = {
 
 // initial states
 
-const resetValidation = (form, inputList, config) => {
+export const resetValidation = (form, inputList, config) => {
   inputList.forEach((input) => {
     hideInputError(form, input, config);
   });
@@ -31,7 +31,7 @@ const toggleButtonState = (inputList, buttonElement, config) => {
   }
 };
 
-const disableButton = (buttonElement, config) => {
+export const disableButton = (buttonElement, config) => {
   buttonElement.classList.add(config.inactiveButtonClass);
   buttonElement.disabled = true;
 }
@@ -70,7 +70,7 @@ const setEventListeners = (form, config) => {
   });
 };
 
-const enableValidation = (config) => {
+export const enableValidation = (config) => {
   const formList = Array.from(document.querySelectorAll(config.formSelector));
   formList.forEach((form) => {
     form.addEventListener('submit', (event) => {
@@ -79,5 +79,3 @@ const enableValidation = (config) => {
     setEventListeners(form, config);
   });
 };
-
-enableValidation(settings);
