@@ -23,9 +23,9 @@ export class Api {
       return Promise.reject(`Error: ${res.status}`);
     });
   }
-//   getAppData() {
-//     return Promise.all([this.getUserInfo(), this.getInitialCards()]);
-//   }
+  //   getAppData() {
+  //     return Promise.all([this.getUserInfo(), this.getInitialCards()]);
+  //   }
   editUserInfo({ name, about }) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",
@@ -49,6 +49,22 @@ export class Api {
         name,
         link,
       }),
+    }).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      return Promise.reject(`Error: ${res.status}`);
+    });
+  }
+  removeCard(cardId) {
+    return fetch(`${this._baseUrl}/cards/${cardId}`, {
+      method: "DELETE",
+      headers: this._headers,
+    }).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      return Promise.reject(`Error: ${res.status}`);
     });
   }
 }
