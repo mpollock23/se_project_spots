@@ -118,11 +118,15 @@ function getCardElement(data) {
   cardImage.src = data.link;
   cardImage.alt = data.name;
   cardTitle.textContent = data.name;
+
   const likeButton = cardElement.querySelector(".card__like-button");
-  likeButton.classList.remove("card__like-button_active");
+  const cardId = data._id;
   likeButton.addEventListener("click", function () {
-    likeButton.classList.toggle("card__like-button_active");
+    handleLikeButton(cardId, likeButton);
   });
+  if (data.isLiked) {
+    likeButton.classList.add("card__like-button_active");
+  }
   const deleteButton = cardElement.querySelector(".card__delete-button");
   deleteButton.addEventListener("click", () => {
     handleDeleteButton(cardElement, data);
@@ -186,6 +190,28 @@ deleteForm.addEventListener("submit", handleDeleteSubmit);
 deleteCancel.addEventListener("click", () => {
   closeModal(confirmDeleteModal);
 });
+
+// Add and remove likes
+function handleLikeButton(cardId, likeButton) {
+  if (likeButton.classList.contains("card__like-button_active")) {
+    likeButton.classList.remove("card__like-button_active");
+    api
+      .removeLike(cardId)
+      .catch((err) => {
+        console.error(err);
+        likeButton.classList.add("card__like-button_active");
+      });
+  } else {
+    likeButton.classList.add("card__like-button_active");
+    api
+      .addLike(cardId)
+      .catch((err) => {
+        console.error(err);
+        likeButton.classList.remove("card__like-button_active");
+      });
+  }
+}
+
 
 // API
 const api = new Api({
