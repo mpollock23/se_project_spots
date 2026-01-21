@@ -18,13 +18,17 @@
 
       <main class="content">
         <section class="profile">
-          <img src="<%=require('./images/avatar.jpg')%>" alt="avatar" class="profile__avatar" />
+          <div class="profile__avatar-container">
+            <img src="<%=require('./images/avatar.jpg')%>" alt="avatar" class="profile__avatar" />
+            <div class="profile__edit-button profile__edit-button_type_avatar-container">
+              <button class="profile__edit-button profile__edit-button_type_avatar" type="button">Edit Avatar</button>
+            </div>            
+          </div>
+          
           <div class="profile__content">
             <h1 class="profile__name">Bessie Coleman</h1>
             <p class="profile__description">Civil Aviator</p>
-            <button class="profile__edit-button" type="button">
-              Edit Profile
-            </button>
+            <button class="profile__edit-button profile__edit-button_type_edit-profile" type="button">Edit Profile</button>
           </div>
           <button class="profile__new-post-button" type="button">
             New Post
@@ -91,7 +95,7 @@
               />
               <span class="form__input-error description-error"></span>
             </label>
-            <button type="submit" class="form__save-btn">Save</button>
+            <button type="submit" class="form__btn">Save</button>
           </form>
         </div>
       </div>
@@ -133,7 +137,7 @@
               />
               <span class="form__input-error caption-error"></span>
             </label>
-            <button type="submit" class="form__save-btn" disabled>Save</button>
+            <button type="submit" class="form__btn" disabled>Save</button>
           </form>
         </div>
       </div>
@@ -163,16 +167,36 @@
               class="modal__close-icon"
             />
           </button>
-          <form class="modal__form" name="delete-card-form">
-            <h2 class="modal__title modal__title_type_confirm-delete">Are you sure you want to delete this image?</h2>
-            <div class="modal__buttons">
-              <button type="submit" class="modal__submit-delete-btn">Delete</button>
-              <button type="button" class="modal__cancel-btn">Cancel</button>
+          <h2 class="modal__title modal__title_type_confirm-delete">Are you sure you want to delete this image?</h2>
+          <form class="modal__form form" name="delete-card-form">  
+            <div class="form__buttons">
+              <button type="submit" class="form__btn form__btn_type_confirm-delete">Delete</button>
+              <button type="button" class="form__btn form__btn_type_cancel">Cancel</button>
             </div>
           </form>
         </div>
       </div>
-    
+ 
+      <div class="modal" id="edit-profile-avatar-modal">
+        <div class="modal__container modal__container_type_edit-avatar">
+          <button class="modal__close-btn modal__close-btn_type_edit-avatar">
+            <img
+              src="<%=require('./images/close-x.svg')%>"
+              alt="close modal"
+              class="modal__close-icon"
+            />
+          </button>
+          <h2 class="modal__title modal__title_type_edit-avatar">Edit profile avatar</h2>
+          <form class="modal__form form" name="edit-avatar">
+            <label class="form__label form__label_type_edit-avatar" for="edit-avatar-input">Profile Picture
+              <input class="form__input form__input_type_edit-avatar" id="edit-avatar-input" type="text" placeholder="Paste the link to an image">
+              <span class="form__input-error edit-avatar-input-error"></span>
+            </label>
+            <button type="submit" class="form__btn">Save</button>
+          </form>
+        </div>
+      </div>      
+      
     </div>
   </body>
 </html>

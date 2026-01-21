@@ -11,16 +11,12 @@
 }
 
 .form__input {
-  padding-top: 16px;
-  padding-right: 12px;
-  padding-bottom: 16px;
-  padding-left: 12px;
+  padding: 16px 12px;
   font-family: Poppins;
   font-weight: 500;
   font-size: 20px;
   line-height: 1;
   color: #212121;
-  width: 100%;
   border: 1px solid #21212166;
   border-radius: 8px;
   box-sizing: border-box;
@@ -57,35 +53,83 @@
   visibility: visible;
 }
 
-.form__save-btn {
+.form__btn {
   background-color: #212121;
   color: #fcf5e5;
   width: 156px;
   height: 52px;
+  box-sizing: border-box;
   border-radius: 8px;
-  padding: 18px 58px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1;
   border: none;
 }
 
-.form__save-btn:hover {
+.form__btn:hover {
   cursor: pointer;
   background-color: #212121CC;
 }
 
-.form__save-btn_disabled {
+.form__btn_disabled {
   opacity: 50%;
   cursor: not-allowed;
 }
+
+.form__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.form__btn_type_confirm-delete {
+  background-color: #FF6565;
+  color: #212121
+}
+
+.form__btn_type_confirm-delete:hover {
+  background-color: #FF3333;
+  cursor: pointer;
+}
+
+.form__btn_type_cancel {
+  border: 1px solid #212121;
+  background-color: #fff;
+  color: #212121;
+}
+
+.form__btn_type_cancel:hover {
+  background-color: #212121;
+  color: #FFFFFF;
+  cursor: pointer;
+  border: 1px solid #212121;
+}
+
 
 @media screen and (min-width: 320px) and (max-width: 630px) {
   .form__input {
     font-size: 16px;
   }
-  .form__save-btn {
+  .form__btn {
     width: 100%;
     padding: 18px 32px;
+  }
+
+  .form_label {
+    margin-bottom: 24px;
+  }
+
+  .form__label_type_edit-avatar {
+    margin-bottom: 20px;
+  }
+
+  .form__buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .form__btn_type_confirm-delete, .form__btn_type_cancel {
+    width: 156px;
   }
 }
