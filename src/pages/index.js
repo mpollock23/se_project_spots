@@ -29,13 +29,13 @@ modalCloseButtons.forEach(function (button) {
 });
 
 // Closing Modals by Clicking on Overlay or Pressing Escape
-const clickCloseModal = (evt) => {
+function clickCloseModal(evt) {
   if (evt.target.classList.contains("modal")) {
     closeModal(evt.target);
   }
 };
 
-const escCloseModal = (evt) => {
+function escCloseModal(evt) {
   if (evt.key === "Escape") {
     const openedModal = document.querySelector(".modal.modal_is-open");
     if (openedModal) {
@@ -44,12 +44,12 @@ const escCloseModal = (evt) => {
   }
 };
 
-const closeModalWithOverlayAndEscape = (openedModal) => {
+function closeModalWithOverlayAndEscape(openedModal) {
   openedModal.addEventListener("click", clickCloseModal);
   document.addEventListener("keydown", escCloseModal);
 };
 
-const removeListeners = (openedModal) => {
+function removeListeners(openedModal) {
   openedModal.removeEventListener("click", clickCloseModal);
   document.removeEventListener("keydown", escCloseModal);
 };
@@ -110,7 +110,6 @@ function handleEditAvatarSubmit(evt, avatar) {
   api
     .updateProfileAvatar(avatar)
     .then(() => {
-      // const img = editAvatarInput.value;
       avatarPic.src = avatar;
       closeModal(editAvatarModal);
     })
@@ -140,7 +139,7 @@ const profileDescription = document.querySelector(".profile__description");
 const profileAvatar = document.querySelector(".profile__avatar");
 
 // Edit Profile Button
-editProfileButton.addEventListener("click", function () {
+editProfileButton.addEventListener("click", () => {
   openModal(editProfileModal);
   resetValidation(
     editProfileForm,
@@ -187,7 +186,7 @@ function getCardElement(data) {
   cardTitle.textContent = data.name;
   const likeButton = cardElement.querySelector(".card__like-button");
   const cardId = data._id;
-  likeButton.addEventListener("click", function () {
+  likeButton.addEventListener("click", () => {
     handleLikeButton(cardId, likeButton);
   });
   if (data.isLiked) {
@@ -197,7 +196,7 @@ function getCardElement(data) {
   deleteButton.addEventListener("click", () => {
     handleDeleteButton(cardElement, data);
   });
-  cardImage.addEventListener("click", function () {
+  cardImage.addEventListener("click", () => {
     previewImage.src = data.link;
     previewImage.alt = data.name;
     previewTitle.textContent = data.name;
@@ -215,7 +214,7 @@ const newPostCaptionInput = newPostForm.querySelector("#caption");
 const newPostSubmitBtn = newPostForm.querySelector(".form__btn");
 
 // New Post Button
-newPostButton.addEventListener("click", function () {
+newPostButton.addEventListener("click", () => {
   openModal(newPostModal);
 });
 

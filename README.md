@@ -17,10 +17,16 @@ This project includes the following features:
 - Flat BEM file structure
 - Responsive Design
 - Git and GitHub
+- OOP
+- Webpack
   
 ## Links  
+* Click [here](https://mpollock23.github.io/se_project_spots/) to visit my site.
+
 * Click [here](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1) to view the Figma design.
 
 * Click [here](https://mpollock23.github.io/se_project_spots/) to view the project on my GitHub page.
 
-* Click [here](https://drive.google.com/file/d/1D3L_y9u6hYbgE6kjZdQ-tFoNWMGDyBuU/view?usp=sharing) to view a video presentation describing this project.
+* Click [here](https://drive.google.com/file/d/1D3L_y9u6hYbgE6kjZdQ-tFoNWMGDyBuU/view?usp=sharing) to view a video presentation describing the HTML and CSS background of this project.
+
+* Click [here](https://drive.google.com/file/d/10m6Fp4I0GKv36oj0L1oWjaEyGAaCTSUb/view?usp=drive_link) to view a video presentation describing the how I built the functionality of this project and how I overcame some challenges in creating it.
