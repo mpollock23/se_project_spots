@@ -1,20 +1,18 @@
-const settings = {
+export const settings = {
   formSelector: ".form",
   inputSelector: ".form__input",
-  submitButtonSelector: ".form__save-btn",
-  inactiveButtonClass: "form__save-btn_disabled",
+  submitButtonSelector: ".form__btn",
+  inactiveButtonClass: "form__btn_disabled",
   inputErrorClass: "form__input_type_error",
   errorClass: "form__input-error",
-  errorClassActive: "form__input-error_active"
-}
+  errorClassActive: "form__input-error_active",
+};
 
-// initial states
-
-const resetValidation = (form, inputList, config) => {
+export const resetValidation = (form, inputList, config) => {
   inputList.forEach((input) => {
     hideInputError(form, input, config);
   });
-}
+};
 
 const hasInvalidInput = (inputList) => {
   return inputList.some((input) => {
@@ -31,10 +29,10 @@ const toggleButtonState = (inputList, buttonElement, config) => {
   }
 };
 
-const disableButton = (buttonElement, config) => {
+export const disableButton = (buttonElement, config) => {
   buttonElement.classList.add(config.inactiveButtonClass);
   buttonElement.disabled = true;
-}
+};
 
 const showInputError = (form, input, errorMessage, config) => {
   const errorElement = form.querySelector(`.${input.id}-error`);
@@ -47,7 +45,7 @@ const hideInputError = (form, input, config) => {
   const errorElement = form.querySelector(`.${input.id}-error`);
   input.classList.remove(config.inputErrorClass);
   errorElement.classList.remove(config.errorClassActive);
-  errorElement.textContent = '';
+  errorElement.textContent = "";
 };
 
 const checkInputValidity = (form, input, config) => {
@@ -63,21 +61,19 @@ const setEventListeners = (form, config) => {
   const buttonElement = form.querySelector(config.submitButtonSelector);
   toggleButtonState(inputList, buttonElement, config);
   inputList.forEach((input) => {
-    input.addEventListener('input', () => {
+    input.addEventListener("input", () => {
       checkInputValidity(form, input, config);
       toggleButtonState(inputList, buttonElement, config);
     });
   });
 };
 
-const enableValidation = (config) => {
+export const enableValidation = (config) => {
   const formList = Array.from(document.querySelectorAll(config.formSelector));
   formList.forEach((form) => {
-    form.addEventListener('submit', (event) => {
+    form.addEventListener("submit", (event) => {
       event.preventDefault();
     });
     setEventListeners(form, config);
   });
 };
-
-enableValidation(settings);
