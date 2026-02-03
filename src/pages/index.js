@@ -65,23 +65,14 @@ const api = new Api({
 
 // Get Profile Content
 api
-  .getUserInfo()
-  .then((result) => {
-    profileName.textContent = result.name;
-    profileDescription.textContent = result.about;
-    profileAvatar.src = result.avatar;
-  })
-  .catch((err) => {
-    console.error(err);
-  });
-
-// Get Initial Cards
-api
-  .getInitialCards()
-  .then((initialCards) => {
+  .getAppInfo()
+  .then(([userProfile, initialCards]) => {
+    profileName.textContent = userProfile.name;
+    profileDescription.textContent = userProfile.about;
+    profileAvatar.src = userProfile.avatar;
     initialCards.forEach((initialCard) => {
       const newCardElement = getCardElement(initialCard);
-      cardsContainer.prepend(newCardElement);
+      cardsContainer.append(newCardElement);
     });
   })
   .catch((err) => {
@@ -111,6 +102,8 @@ function handleEditAvatarSubmit(evt, avatar) {
     .updateProfileAvatar(avatar)
     .then(() => {
       avatarPic.src = avatar;
+      evt.target.reset();
+      disableButton(editAvatarSubmitbtn, settings);
       closeModal(editAvatarModal);
     })
     .catch((err) => {
